@@ -6,7 +6,7 @@ Renders the frontend HTML template with header, footer and all content types.
 
 ---
 
-Version: 1.2.4
+Version: 1.2.5 [wip]
 
 Authors: Ben & Matze @ https://modularity.group
 

@@ -16,30 +16,36 @@
   <?php do_action('modularity_body_start'); ?>
   <?php do_action('modularity_template_header'); ?>
 
-  <main class="post">
+  <main>
     <article class="site-layout-container">
       <?php do_action('modularity_content_before'); ?>
       <?php
-        if (is_front_page() && is_home()) {
-          do_action('modularity_template_blog');
+        if (is_front_page() && !is_home()) {
+          if (have_posts()): while (have_posts()): the_post();
+            the_content();
+          endwhile; endif;
         }
-        elseif (is_front_page()) {
-          do_action('modularity_template_home');
-        }
-        elseif (is_home()) {
-          do_action('modularity_template_blog');
+        elseif (is_front_page() || is_home()) {
+          if (have_posts()): while (have_posts()): the_post();
+            echo '<div class="posts">';
+            do_action('modularity_content_post');
+            echo '</div>';
+          endwhile; endif;
+
         }
         elseif (is_404()) {
-          do_action('modularity_template_404');
+          echo '<h1>' . __("Page not found") . '</h1>';
         }
         elseif (is_search()) {
-          do_action('modularity_template_search');
+          do_action('modularity_content_search');
         }
         elseif (is_author()) {
           do_action('modularity_template_author');
         }
         elseif (is_singular('page')) {
-          do_action('modularity_template_page');
+          if (have_posts()): while (have_posts()): the_post();
+            the_content();
+          endwhile; endif;
         }
         elseif (is_singular('post')) {
           if (have_posts()): while (have_posts()): the_post();
@@ -47,7 +53,11 @@
           endwhile; endif;
         }
         elseif (is_post_type_archive('post') || is_archive()) {
-          do_action('modularity_template_archive');
+          if (have_posts()): while (have_posts()): the_post();
+            echo '<div class="posts">';
+            do_action('modularity_content_post');
+            echo '</div>';
+          endwhile; endif;
         }
         elseif (is_date()) {
           do_action('modularity_template_date');

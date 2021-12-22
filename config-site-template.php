@@ -5,41 +5,62 @@ add_action("modularity", function(){
 });
 
 function config_base_template_header() {
-  require_once "templates/template.header.php";
+  ?>
+    <header class="header">
+      <div class="site-layout-container">
+        <figure>
+          <a href="<?= get_bloginfo('url'); ?>"><?= get_bloginfo("name"); ?></a>
+        </figure>
+      </div>
+    </header><footer class="footer">
+      <div class="site-layout-container">
+        <?php if (is_active_sidebar('footer')): ?>
+          <div class="footer__widgets">
+            <?php dynamic_sidebar('footer'); ?>
+          </div>
+        <?php endif; ?>
+      </div>
+    </footer>
+
+  <?php
 }
 add_action("modularity_template_header", "config_base_template_header");
 
 function config_base_template_footer() {
-  require_once "templates/template.footer.php";
+  ?>
+    <footer class="footer">
+      <div class="site-layout-container">
+        <?php if (is_active_sidebar('footer')): ?>
+          <div class="footer__widgets">
+            <?php dynamic_sidebar('footer'); ?>
+          </div>
+        <?php endif; ?>
+      </div>
+    </footer>
+  <?php
 }
 add_action("modularity_template_footer", "config_base_template_footer");
 
-function config_base_template_content() {
-  require_once "templates/template.content.php";
+function config_site_template_content_search() {
+  ?>
+    <?php $query = new WP_Query(array('s' => get_search_query())); ?>
+    <?php if ($query->have_posts()): ?>
+      <div class="search__results">
+        <ul>
+          <?php while ($query->have_posts()) : $query->the_post(); ?>
+            <li>
+              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+              <span><?php the_excerpt(); ?></span>
+            </li>
+          <?php endwhile; ?>
+        </ul>
+      </div>
+    <?php else : ?>
+      <p><?php _e('Dazu gab es leider keine Treffer.'); ?></p>
+    <?php endif; ?>
+  <?php
 }
-add_action("modularity_template_home", "config_base_template_content");
-add_action("modularity_template_page", "config_base_template_content");
-
-function config_base_template_blog() {
-  require_once "templates/template.blog.php";
-}
-add_action("modularity_template_blog", "config_base_template_blog");
-add_action("modularity_template_archive", "config_base_template_blog");
-
-// function config_base_template_post() {
-//   require_once "templates/template.post.php";
-// }
-// add_action("modularity_template_post", "config_base_template_post");
-
-function config_base_template_search() {
-  require_once "templates/template.search.php";
-}
-add_action("modularity_template_search", "config_base_template_search");
-
-function config_base_template_404() {
-  require_once "templates/template.404.php";
-}
-add_action("modularity_template_404", "config_base_template_404");
+add_action("modularity_content_search", "config_site_template_content_search");
 
 function config_base_template_title( $title, $sep ) {
   global $paged, $page;
@@ -59,7 +80,6 @@ function config_base_template_title( $title, $sep ) {
   return $title;
 }
 add_filter( 'wp_title', 'config_base_template_title', 10, 2 );
-
 
 add_filter('excerpt_more', function($more) {
   return '';
