@@ -1,10 +1,21 @@
-Module-Name: config-site-template / Version: 1.2.4 / Author: Ben & Matze https://modularity.group
+# config-site-template [work in progress]
+
+This module builds on WordPress and Modularity.
+
+Renders the frontend HTML template with header, footer and all content types.
+
+Just add `<?php do_action('modularity');` to your theme's `index.php`.
 
 ---
 
-Render basic HTML structure with templates for header, footer, page, blog, post, search and 404.
+Version: 1.2.4
 
-Overwrite templates with e.g. `remove_action('modularity_template_header', 'config_base_template_header')`.
+Authors: Ben & Matze @ https://modularity.group
+
+License: MIT
+
+
+## Details
 
 Provides the following hooks:
 
@@ -37,7 +48,8 @@ modularity_body_end
 modularity_document_end
 ```
 
----
+
+## Changelog
 
 1.2.4 | hookable post template content
 
@@ -70,4 +82,3 @@ modularity_document_end
 1.1.0 | add wp_body_open(), add blog and post template, move sub-templates to folder, add title link
 
 1.0.0 | remove `config_templates` support
-
