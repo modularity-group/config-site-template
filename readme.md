@@ -4,8 +4,6 @@ This module builds on WordPress and Modularity.
 
 Renders the frontend HTML template with header, footer and all content types.
 
-Just add `<?php do_action('modularity');` to your theme's `index.php`.
-
 ---
 
 Version: 1.2.4
@@ -14,10 +12,11 @@ Authors: Ben & Matze @ https://modularity.group
 
 License: MIT
 
+---
 
-## Details
+Just add `<?php do_action('modularity');` to your theme's `index.php`.
 
-Provides the following hooks:
+You may customize the output with the following hooks:
 
 ```
 modularity_document_start
@@ -48,8 +47,7 @@ modularity_body_end
 modularity_document_end
 ```
 
-
-## Changelog
+---
 
 1.2.4 | hookable post template content
 
