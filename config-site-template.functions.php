@@ -50,7 +50,7 @@ function site_template_footer() {
   <?php
 }
 
-function site_template_footer_sidebar_register(){
+function site_template_footer_sidebar(){
   register_sidebar(array(
     'name' => 'Footer',
     'id' => 'footer',

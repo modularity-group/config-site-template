@@ -32,7 +32,7 @@ add_filter('excerpt_length', function($length) { return 27; }, 9999);
 
 add_filter('wp_title', 'site_template_title', 10, 2);
 
-add_action('widgets_init', 'site_template_footer_sidebar_register');
+add_action('widgets_init', 'site_template_footer_sidebar');
 
 add_action("wp_body_open", "site_template_header");
 

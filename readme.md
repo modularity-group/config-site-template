@@ -2,11 +2,11 @@
 
 This module builds on WordPress and Modularity.
 
-Renders the frontend HTML template with header, footer, page, search, blog, post & 404.
+Renders the frontend with header, footer, page, blog, post, search & 404.
 
 ---
 
-Version: 1.3.0 [work in progress]
+Version: 2.0.0
 
 Authors: Ben & Matze @ https://modularity.group
 
@@ -16,11 +16,11 @@ License: MIT
 
 Just add `<?php do_action('modularity');` to your theme's `index.php`.
 
-You may customize the output with removing the (or adding new) actions
+You may customize the output with the actions defined in `config-site-template.php`.
 
 ---
 
-1.3.0 | rewrite for full hookability, remove most modularity hooks
+2.0.0 | rewrite for full hookability, remove most modularity hooks
 
 1.2.4 | hookable post template content
 
