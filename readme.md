@@ -6,7 +6,7 @@ Renders the frontend with header, footer, page, blog, post, search & 404.
 
 ---
 
-Version: 2.0.0
+Version: 2.0.1
 
 Authors: Ben & Matze @ https://modularity.group
 
@@ -19,6 +19,8 @@ Just add `<?php do_action('modularity');` to your theme's `index.php`.
 You may customize the output with the actions defined in `config-site-template.php`.
 
 ---
+
+2.0.1 | add body_class() and post_class() to container markup elements 
 
 2.0.0 | rewrite for full hookability, remove most modularity hooks
 

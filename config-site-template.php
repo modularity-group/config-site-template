@@ -13,9 +13,9 @@ add_action("modularity", function(){
       <meta name="viewport" content="width=device-width,initial-scale=1.0">
       <?php wp_head(); ?>
     </head>
-    <body>
+    <body <?php body_class(); ?>>
       <?php wp_body_open(); ?>
-      <main>
+      <main <?php post_class(); ?>>
         <article class="site-layout-container">
           <?php do_action('modularity_content'); ?>
         </article>
