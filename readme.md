@@ -1,12 +1,12 @@
-# config-site-template [work in progress]
+# config-site-template 
 
 This module builds on WordPress and Modularity.
 
-Renders the frontend HTML template with header, footer and all content types.
+Renders the frontend HTML template with header, footer, page, search, blog, post & 404.
 
 ---
 
-Version: 1.2.5 [wip]
+Version: 1.3.0 [work in progress]
 
 Authors: Ben & Matze @ https://modularity.group
 
@@ -16,38 +16,11 @@ License: MIT
 
 Just add `<?php do_action('modularity');` to your theme's `index.php`.
 
-You may customize the output with the following hooks:
-
-```
-modularity_document_start
-modularity_doctype_start
-modularity_head_start
-modularity_head_title
-modularity_head_after_title
-modularity_head_end
-modularity_body_start
-modularity_template_header
-modularity_main_menu
-modularity_template_blog
-modularity_template_home
-modularity_template_blog
-modularity_template_404
-modularity_template_search
-modularity_template_page
-modularity_template_post
-modularity_content_post
-modularity_template_archive
-modularity_template_date
-modularity_template_other
-modularity_content_before
-modularity_content_after
-modularity_template_footer
-modularity_aside (tbd)
-modularity_body_end
-modularity_document_end
-```
+You may customize the output with removing the (or adding new) actions
 
 ---
+
+1.3.0 | rewrite for full hookability, remove most modularity hooks
 
 1.2.4 | hookable post template content
 
