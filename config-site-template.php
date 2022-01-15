@@ -3,8 +3,7 @@
 require_once dirname(__FILE__) . "/config-site-template.functions.php";
 
 add_action("modularity", function(){
-  do_action('get_header'); ?>
-  <!doctype html>
+  do_action('get_header'); ?><!doctype html>
   <html <?php language_attributes(); ?>>
     <head>
       <meta charset="<?php bloginfo('charset'); ?>">
