@@ -6,7 +6,7 @@ Renders the frontend with header, footer, page, blog, post, search & 404.
 
 ---
 
-Version: 2.0.2
+Version: 2.0.3 (rc1)
 
 Authors: Ben & Matze @ https://modularity.group
 
@@ -19,6 +19,8 @@ Just add `<?php do_action('modularity');` to your theme's `index.php`.
 You may customize the output with the actions defined in `config-site-template.php`.
 
 ---
+
+2.0.3 | fix blog archive template wrap
 
 2.0.2 | remove whitespace before html doctype
 

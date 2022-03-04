@@ -99,14 +99,16 @@ function site_template_content_search() {
 
 function site_template_content_posts() {
   if (site_template_is_blog() && !is_single() && have_posts()) {
+    ?><div class="posts"><?php
     while (have_posts()) {
       the_post();
       ?>
-        <div class="posts">
+        <div class="posts__post">
           <?php do_action('modularity_content_post') ?>
         </div>
       <?php
     }
+    ?></div><?php
   }
 }
 
