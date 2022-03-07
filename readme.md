@@ -20,7 +20,7 @@ You may customize the output with the actions defined in `config-site-template.p
 
 ---
 
-2.0.3 | fix blog archive template wrap
+2.0.3 | blog archive: fix template wrap, show excerpt not content
 
 2.0.2 | remove whitespace before html doctype
 

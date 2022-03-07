@@ -153,7 +153,7 @@ function site_template_post_content_content() {
   if (!is_single()):
     ?>
       <div class="post__content">
-        <?php the_content(); ?>
+        <?php the_excerpt(); ?>
       </div>
     <?php
   else:
