@@ -15,6 +15,7 @@ add_action("modularity", function(){
     <body <?php body_class(); ?>>
       <?php wp_body_open(); ?>
       <main <?php post_class(); ?>>
+        <?php do_action('modularity_before_content'); ?>
         <article class="site-layout-container">
           <?php do_action('modularity_content'); ?>
         </article>
