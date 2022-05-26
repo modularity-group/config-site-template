@@ -2,7 +2,7 @@
 
 function site_template_is_page() {
   global $post;
-  return get_post_type($post) === 'page' || (is_front_page() && !is_home());
+  return (get_post_type($post) === 'page' && !is_search()) || (is_front_page() && !is_home());
 }
 
 function site_template_is_blog() {
