@@ -6,7 +6,7 @@ Renders the frontend with header, footer, page, blog, post, search & 404.
 
 ---
 
-Version: 2.0.4 (rc1)
+Version: 2.0.5
 
 Authors: Ben & Matze @ https://modularity.group
 
@@ -20,7 +20,9 @@ You may customize the output with the actions defined in `config-site-template.p
 
 ---
 
-2.0.4 | introduce new hook `modularity_before_content` before the main layout-container (useful for integrationg sidebar-layouts)
+2.0.5 | fix search results page
+
+2.0.4 | introduce new hook `modularity_before_content` before the main layout-container (useful for integration of sidebar-layouts)
 
 2.0.3 | blog archive: fix template wrap, show excerpt not content
 
